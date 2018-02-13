@@ -1,0 +1,19 @@
+* {
+  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+  line-height: ($base__line/$base__font-size);
+}
+
+p {
+  margin: 0 0 em(30px, 18px);
+	font-weight: $font-weight--light;
+	font-size: em(18px);
+  font-family: $font-family--primary;
+	line-height: (27px/18px);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

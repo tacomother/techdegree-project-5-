@@ -1,0 +1,21 @@
+.nav {
+  margin-top: em(25px);
+  @include flexy($dir: column);
+  @include mq(med) {
+    @include flexy($dir: row, $just: flex-end);
+  }
+  @include e(item) {
+    @extend %nav__item;
+    a {
+      color: $gray;
+      font-weight: $font-weight--light;
+      padding: 10px 20px;
+      border-radius: $br--default;
+      text-decoration: none;
+      &:hover {
+        background-color: $turquoise;
+        color: $white;
+      }
+    }
+  }
+}

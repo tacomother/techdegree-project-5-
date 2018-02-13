@@ -1,0 +1,73 @@
+// Theme color
+
+$theme-grid: (
+  grid__col--3 : $mauve,
+  grid__col--4 : darken($tangerine, 20%),
+  grid__col--5 : lighten($green, 30%),
+  grid__col--6 : darken($mauve, 30%),
+  grid__col--7 : $tangerine,
+  grid__col--8 : darken($green, 25%),
+  grid__col--12 : $green
+);
+
+// Center class
+
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Mains
+
+.container {
+  @extend .centered;
+  padding: em(28px);
+  max-width: $g-cont-max-w;
+}
+
+.grid {
+  @include e(row) {
+  	@extend %clearfix;
+  	margin-bottom: em(24px);
+  	display: block;
+  	@include mq(med) {
+  		@include flexy;
+  	}
+  }
+
+  @include e(col) {
+  	@include mq(med) {
+  		@include g-columns;
+  	}
+  }
+}
+
+// Columns
+
+[class^="grid__col--"] {
+  border-radius: $br--default;
+	@include mq(sm)  {
+		margin-top: em(12px);
+		margin-bottom: em(12px);
+	}
+	@include mq(med) {
+		@include doubly(percentage($g-gutter-width / $context));
+		min-height: 1px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+
+
+// Using .theme__colors
+
+@each $theme, $color in $theme-grid {
+	.#{$theme}.theme__colors {
+		color: $white;
+		padding: 8px;
+		text-align: center;
+		background-color: $color;
+	}
+}

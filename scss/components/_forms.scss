@@ -1,0 +1,19 @@
+.form {
+  @include e(input) {
+  background-color: $white;
+  color: $gray;
+  border: 0;
+  border-bottom: solid 8px $color-primary;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+  outline: none;
+  font-size: em(18px);
+  font-weight: $font-weight--light;
+  width: 100%;
+  }
+  @include e(label) {
+    @include m(hidden) {
+      @extend %hidden;
+    }
+  }
+}

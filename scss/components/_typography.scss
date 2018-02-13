@@ -1,0 +1,22 @@
+.link {
+	@extend %link;
+}
+
+.headline {
+  @include m(primary) {
+    @extend %headline--primary;
+  }
+  @include m(secondary) {
+    @extend %headline--secondary;
+  }
+}
+
+.blockquote {
+  border-left: 10px solid $color-primary;
+  padding: 0 15% 0 10px;
+  font-weight: $font-weight--bold;
+  font-size: em(20px);
+  font-style: italic;
+  color: $black;
+  margin: em(24px) 0;
+}

@@ -1,0 +1,30 @@
+
+.btn {
+  @include ui-colors($ui-colors);
+}
+
+[class^="btn--"] {
+  @extend %btn;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: em(20px, 10px);
+  @include mq(sm) {
+    width: 100%;
+  }
+  @include mq(med) {
+    @include doubly(11%);
+    width: auto;
+    display: inline-block;
+  }
+}
+
+// Form button
+
+.form {
+  .btn--default {
+      @include mq(med) {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+}
